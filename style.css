@@ -1,0 +1,27 @@
+.imgnav {
+    width: 20%;
+    height: 5%;
+}
+
+.navbar {
+    background-color: palevioletred;
+    color: #f5d5e2;
+}
+
+.carrousel {
+    height: 45vh;
+}
+
+.footer {
+  background-color: palevioletred;
+  height: 6vh;
+  margin-top: 10px;
+}
+
+.img_footer {
+    height: 4vh;
+}
+
+.h5 {
+    
+}
