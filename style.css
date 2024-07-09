@@ -30,8 +30,12 @@
     width: 18rem;
 }
 
-.main {   
-    flex-grow: 1;
+.main-card {
+    min-height: 75vh ;
+}
+
+.cardimg {
+    height: 380px;
 }
 
 .imgcard {
