@@ -22,6 +22,42 @@
     height: 4vh;
 }
 
-.h5 {
-    
+.form {
+    width: 100%;
+}
+
+.card {
+    width: 18rem;
+}
+
+.main {   
+    flex-grow: 1;
+}
+
+.frame {
+    display: flex;
+    flex-direction: column;
+    height: 67vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.table {
+    width: 70%;
+    height: 80%;
+    border: solid;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+th,
+tr,
+td {
+    border: solid 2px;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.headertable {
+    font-size: 30px;
 }
