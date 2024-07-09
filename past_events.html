@@ -53,6 +53,10 @@
                     aria-label="Slide 2"></button>
                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
                     aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
+                    aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4"
+                    aria-label="Slide 5"></button>
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active carrousel">
@@ -72,6 +76,18 @@
                     <img src="./assets/images/optional_banner_3.jpg" class="d-block w-100" alt="banner3">
                     <div class="carousel-caption d-none d-md-block">
                         <h5>Past Events</h5>
+                    </div>
+                </div>
+                <div class="carousel-item carrousel">
+                    <img src="./assets/images/optional_banner_4.jpg" class="d-block w-100" alt="banner3">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Contact</h5>
+                    </div>
+                </div>
+                <div class="carousel-item carrousel">
+                    <img src="./assets/images/optional_banner_5.jpg" class="d-block w-100" alt="banner3">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Stats</h5>
                     </div>
                 </div>
             </div>
@@ -119,39 +135,51 @@
             <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css"
                 rel="stylesheet">
         </div>
-        <div class="container cards col-lg-10 justify-content-around d-flex flex-wrap gap-4">
+        <div class="container cards col-lg-10 justify-content-around d-flex flex-wrap gap-4 mt-2">
             <div class="card">
-                <img class="card-img-top" src="./assets/images/books.jpg" alt="Card image cap">
+                <img class="imgcard card-img-top" src="./assets/images/books.jpg" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title">School Book Fair</h5>
                     <p class="card-text">Bring your unused school book and bring the one you need.</p>
-                    <a href="./Details.html" class="btn btn-primary">Details</a>
+                    <div class="d-flex justify-content-around">
+                        <p>Price: $1</p>
+                        <a href="./Details.html" class="btn btn-primary">Details</a>
+                    </div>
                 </div>
             </div>
             <div class="card">
-                <img class="card-img-top" src="./assets/images/food_fair.jpg" alt="Card image cap">
+                <img class="imgcard card-img-top" src="./assets/images/food_fair.jpg" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title">Festival of the collectivities</h5>
                     <p class="card-text">Enjoy your favorite dishes from different countries in a unique event for the
                         whole family.</p>
-                    <a href="./Details.html" class="btn btn-primary">Details</a>
+                    <div class="d-flex justify-content-around">
+                        <p>Price: $5</p>
+                        <a href="./Details.html" class="btn btn-primary">Details</a>
+                    </div>
                 </div>
             </div>
             <div class="card">
-                <img class="card-img-top" src="./assets/images/marathon.jpg" alt="Card image cap">
+                <img class="imgcard card-img-top" src="./assets/images/marathon.jpg" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title">10K for life</h5>
                     <p class="card-text">Come and exercise, improve your health and lifestyle.</p>
-                    <a href="./Details.html" class="btn btn-primary">Details</a>
+                    <div class="d-flex justify-content-around">
+                        <p>Price: $3</p>
+                        <a href="./Details.html" class="btn btn-primary">Details</a>
+                    </div>
                 </div>
             </div>
             <div class="card">
-                <img class="card-img-top" src="./assets/images/outing_to_the_museum.jpg" alt="Card image cap">
+                <img class="imgcard card-img-top" src="./assets/images/outing_to_the_museum.jpg" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title">Art Exhibition</h5>
                     <p class="card-text">Let's go to the art museum for an incredible tour to learn about the largest
                         dinosaurs.</p>
-                    <a href="./Details.html" class="btn btn-primary">Details</a>
+                    <div class="d-flex justify-content-around">
+                        <p>Price: $15</p>
+                        <a href="./Details.html" class="btn btn-primary">Details</a>
+                    </div>
                 </div>
             </div>
         </div>
