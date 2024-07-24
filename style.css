@@ -34,12 +34,27 @@
     min-height: 80vh ;
 }
 
+.card-text{
+    font-size: 15px;
+}
+
+.tarjeta{
+    width: 400px;
+    border: solid black;
+    align-items: center;
+    padding: 5px;
+}
+
 .cardimg {
     height: 380px;
 }
 
+
+
 .imgcard {
     height: 12rem ;
+    width: 100%;
+
 }
 
 .frame {
