@@ -12,6 +12,10 @@
     height: 45vh;
 }
 
+.fixedimg{
+    object-fit: cover;
+}
+
 .footer {
   background-color: palevioletred;
   height: 6vh;
