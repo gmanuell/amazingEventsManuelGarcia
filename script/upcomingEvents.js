@@ -194,21 +194,20 @@ const data = {
       },
     ],
   };
-let contenedor = document.getElementById("container")
+  let containerJs = document.getElementById("containerJs")
 for (let i = 0; i < data.events.length; i++) {
   if (new Date(data.events[i].date) > new Date (data.currentDate)) {
     
     
-    let tarjeta = document.createElement("div");
-    tarjeta.className = "tarjeta"
-    tarjeta.innerHTML =`<img src="${data.events[i].image}" class="imgcard card-img-top" alt="${data.events[i].name}">
-    <h5 class="card-title">${data.events[i].name}</h5>
-    <p class="card-text">${data.events[i].description}</p>
-    <div class="d-flex justify-content-between">
-    <p>Price: ${data.events[i].price}$</p>
-    <a href="./Details.html" class="btn btn-primary">Details</a>
-    </div>`
-    console.log(tarjeta);
-    contenedor.appendChild(tarjeta)
+    let cardJs = document.createElement("div");
+  cardJs.className = "tarjeta"
+  cardJs.innerHTML =`<img src="${data.events[i].image}" class="imgcard card-img-top" alt="${data.events[i].name}">
+                    <h5 class="card-title">${data.events[i].name}</h5>
+                    <p class="card-text">${data.events[i].description}</p>
+                       <div class="d-flex justify-content-between">
+                        <p>Price: ${data.events[i].price}$</p>
+                        <a href="./pages/Details.html" class="btn btn-primary">Details</a>
+                    </div>`
+                containerJs.appendChild(cardJs)
   }
   }
