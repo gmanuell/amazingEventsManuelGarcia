@@ -231,7 +231,7 @@ function filterEvents() {
 
   const filteredEvents = data.events.filter(event =>{ 
     const isCategoryMatch = selectedCategories.length === 0 || selectedCategories.includes(event.category);
-    const isSearchMatch = event.name.toLocaleLowerCase().includes(searchText) || event.description.toLocaleLowerCase().includes(searchText);
+    const isSearchMatch = event.name.toLocaleLowerCase().includes(searchText) || event.description.toLocaleLowerCase().includes(searchText) || event.price.toString().includes(searchText);
     return isCategoryMatch && isSearchMatch
   });
 
