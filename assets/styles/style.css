@@ -43,7 +43,9 @@
     font-size: 15px;
 }
 
-
+.main {
+    min-height: calc(100vh - 100px);
+}
 
 .detailCard{
     object-fit: cover;
