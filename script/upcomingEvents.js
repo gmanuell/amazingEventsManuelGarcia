@@ -238,27 +238,58 @@ function filterEvents() {
   });
 
 
-  filteredEvents.forEach(event => {
-      let tarjeta = document.createElement("div");
-      tarjeta.className = "tarjeta";
-      tarjeta.innerHTML = `
-          <img class="imgcard card-img-top" src="${event.image}">
-          <div class="card-body d-flex flex-column justify-content-between">
-          <h5 class="card-title">${event.name}</h5>
-          <p class=" card-text">${event.description}</p>
-          <div class="d-flex justify-content-between">
-            <p>${event.price} $</p>
-            <a href="./pages/details.html?id=${event._id}" class="btn btn-primary">Details</a>
-          </div>
-          </div>`;
-      contenedor.appendChild(tarjeta);
-  });
+//   filteredEvents.forEach(event => {
+//       let tarjeta = document.createElement("div");
+//       tarjeta.className = "tarjeta";
+//       tarjeta.innerHTML = `
+//           <img class="imgcard card-img-top" src="${event.image}">
+//           <div class="card-body d-flex flex-column justify-content-between">
+//           <h5 class="card-title">${event.name}</h5>
+//           <p class=" card-text">${event.description}</p>
+//           <div class="d-flex justify-content-between">
+//             <p>${event.price} $</p>
+//             <a href="./pages/details.html?id=${event._id}" class="btn btn-primary">Details</a>
+//           </div>
+//           </div>`;
+//       contenedor.appendChild(tarjeta);
+//   });
+// }
+
+// searchForm.addEventListener('input',filterEvents);
+
+// createCategoryCheckboxes();
+// filterEvents();
+
+renderEvents(filteredEvents);
 }
 
-searchForm.addEventListener('input',filterEvents);
+function renderEvents(events) {
+    contenedor.innerHTML = '';
+    if (events.length === 0) {
+        contenedor.innerHTML = `
+        <div> <h3>No encontramos eventos que coincidan con tu búsqueda.</h3>
+        </div>`;
+    } else {
+        events.forEach(event => {
+            let tarjeta = document.createElement("div");
+            tarjeta.className = "tarjeta";
+            tarjeta.innerHTML = `
+                <img class="imgcard card-img-top" src="${event.image}">
+                <div class="card-body d-flex flex-column justify-content-between">
+                    <h5 class="card-title">${event.name}</h5>
+                    <p class=" card-text">${event.description}</p>
+                    <div class="d-flex justify-content-between">
+                        <p>${event.price} $</p>
+                        <a href="./pages/details.html?id=${event._id}" class="btn btn-primary">Details</a>
+                    </div>
+                </div>`;
+            contenedor.appendChild(tarjeta);
+        });
+    }
+}
+
+searchForm.addEventListener('input', filterEvents);
 
 createCategoryCheckboxes();
 filterEvents();
-
-
 
