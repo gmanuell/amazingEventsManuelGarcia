@@ -43,6 +43,14 @@
     font-size: 15px;
 }
 
+
+
+.detailCard{
+    object-fit: cover;
+    max-height: 500px;
+    width: 100%;
+}
+
 .tarjeta{
     width: 400px;
     border: solid black;
