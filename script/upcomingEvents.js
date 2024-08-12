@@ -237,29 +237,6 @@ function filterEvents() {
     return isCategoryMatch && isSearchMatch && dateFilter
   });
 
-
-//   filteredEvents.forEach(event => {
-//       let tarjeta = document.createElement("div");
-//       tarjeta.className = "tarjeta";
-//       tarjeta.innerHTML = `
-//           <img class="imgcard card-img-top" src="${event.image}">
-//           <div class="card-body d-flex flex-column justify-content-between">
-//           <h5 class="card-title">${event.name}</h5>
-//           <p class=" card-text">${event.description}</p>
-//           <div class="d-flex justify-content-between">
-//             <p>${event.price} $</p>
-//             <a href="./pages/details.html?id=${event._id}" class="btn btn-primary">Details</a>
-//           </div>
-//           </div>`;
-//       contenedor.appendChild(tarjeta);
-//   });
-// }
-
-// searchForm.addEventListener('input',filterEvents);
-
-// createCategoryCheckboxes();
-// filterEvents();
-
 renderEvents(filteredEvents);
 }
 
@@ -280,7 +257,7 @@ function renderEvents(events) {
                     <p class=" card-text">${event.description}</p>
                     <div class="d-flex justify-content-between">
                         <p>${event.price} $</p>
-                        <a href="./pages/details.html?id=${event._id}" class="btn btn-primary">Details</a>
+                        <a href="../pages/details.html?id=${event._id}" class="btn btn-primary">Details</a>
                     </div>
                 </div>`;
             contenedor.appendChild(tarjeta);
