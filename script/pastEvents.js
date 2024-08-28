@@ -1,17 +1,10 @@
-fetch('https://aulamindhub.github.io/amazing-api/events.json')
-    .then(response => response.json())
-    .then(data => {
-        renderEvents(data.events);
-        createCategoryCheckboxes(data.events);
-        searchForm.addEventListener('input', () => filterEvents(data.events)); 
-    })
-    .catch(error => console.error('Error fetching data:', error));
+import { useData } from "./functions.js";
 
 const contenedor = document.getElementById("contenedor");
 const checkboxContainer = document.getElementById("inputs");
 const searchForm = document.getElementById("inputSearch")
 
-function createCategoryCheckboxes() {
+function createCategoryCheckboxes(data) {
   const categories = [...new Set(data.events.map(event => event.category))];
   checkboxContainer.innerHTML = '';
 
@@ -76,7 +69,12 @@ function renderEvents(events) {
     }
 }
 
-searchForm.addEventListener('input', filterEvents);
+searchForm.addEventListener('input', () => {
+  useData(filterEvents);
+});
 
-createCategoryCheckboxes();
-filterEvents();
+
+useData((data) => {
+  createCategoryCheckboxes(data);
+  filterEvents(data);
+});

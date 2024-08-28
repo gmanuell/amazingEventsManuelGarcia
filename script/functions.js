@@ -24,6 +24,21 @@ export function useData(callback) {
         });
 }
 
+export function createCategoryCheckboxes(data, checkboxContainer, filterEvents) {
+    const categories = [...new Set(data.events.map(event => event.category))];
+    checkboxContainer.innerHTML = '';
 
+    categories.forEach(category => {
+        const checkbox = document.createElement('div');
+        checkbox.className = 'form-check';
+        checkbox.innerHTML = `
+            <input class="form-check-input" type="checkbox" value="${category}" id="${category}">
+            <label class="form-check-label" for="${category}">${category}</label>
+        `;
+        checkboxContainer.appendChild(checkbox);
+    });
 
-
+    checkboxContainer.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+        checkbox.addEventListener('change', () => filterEvents(data));
+    });
+}
