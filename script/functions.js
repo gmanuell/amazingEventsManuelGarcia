@@ -1,4 +1,4 @@
-// fetchData.js
+// functions.js
 export function fetchData() {
     return fetch("https://aulamindhub.github.io/amazing-api/events.json")
         .then(response => {
@@ -41,4 +41,54 @@ export function createCategoryCheckboxes(data, checkboxContainer, filterEvents) 
     checkboxContainer.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
         checkbox.addEventListener('change', () => filterEvents(data));
     });
+}
+
+// export function renderEvents(events) {
+//     contenedor.innerHTML = '';
+//     if (events.length === 0) {
+//         contenedor.innerHTML = `
+//         <div> <h3>No encontramos eventos que coincidan con tu búsqueda.</h3>
+//         </div>`;
+//     } else {
+//         events.forEach(event => {
+//             let tarjeta = document.createElement("div");
+//             tarjeta.className = "tarjeta";
+//             tarjeta.innerHTML = `
+//                 <img class="imgcard card-img-top" src="${event.image}">
+//                 <div class="card-body d-flex flex-column justify-content-between">
+//                     <h5 class="card-title">${event.name}</h5>
+//                     <p class=" card-text">${event.description}</p>
+//                     <div class="d-flex justify-content-between">
+//                         <p>${event.price} $</p>
+//                         <a href="./pages/details.html?id=${event._id}" class="btn btn-primary">Details</a>
+//                     </div>
+//                 </div>`;
+//             contenedor.appendChild(tarjeta);
+//         });
+//     }
+// }
+
+export function renderEvents(events, contenedor) {
+    contenedor.innerHTML = '';
+    if (events.length === 0) {
+        contenedor.innerHTML = `
+        <div> <h3>No encontramos eventos que coincidan con tu búsqueda.</h3>
+        </div>`;
+    } else {
+        events.forEach(event => {
+            let tarjeta = document.createElement("div");
+            tarjeta.className = "tarjeta";
+            tarjeta.innerHTML = `
+                <img class="imgcard card-img-top" src="${event.image}">
+                <div class="card-body d-flex flex-column justify-content-between">
+                    <h5 class="card-title">${event.name}</h5>
+                    <p class="card-text">${event.description}</p>
+                    <div class="d-flex justify-content-between">
+                        <p>${event.price} $</p>
+                        <a href="./pages/details.html?id=${event._id}" class="btn btn-primary">Details</a>
+                    </div>
+                </div>`;
+            contenedor.appendChild(tarjeta);
+        });
+    }
 }

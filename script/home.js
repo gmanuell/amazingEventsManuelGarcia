@@ -1,45 +1,4 @@
 
-// import { fetchData , useData } from "./functions.js";
-
-
-// const contenedor = document.getElementById("contenedor");
-// const checkboxContainer = document.getElementById("inputs");
-// const searchForm = document.getElementById("inputSearch");
-
-// function createCategoryCheckboxes() {
-//     const categories = [...new Set(data.events.map(event => event.category))];
-//     checkboxContainer.innerHTML = '';
-
-//     categories.forEach(category => {
-//         const checkbox = document.createElement('div');
-//         checkbox.className = 'form-check';
-//         checkbox.innerHTML = `
-//             <input class="form-check-input" type="checkbox" value="${category}" id="${category}">
-//             <label class="form-check-label" for="${category}">${category}</label>
-//         `;
-//         checkboxContainer.appendChild(checkbox);
-//     });
-
-//     checkboxContainer.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
-//         checkbox.addEventListener('change', filterEvents);
-//     });
-// }
-
-// function filterEvents() {
-//     const selectedCategories = Array.from(checkboxContainer.querySelectorAll('input[type="checkbox"]:checked'))
-//         .map(checkbox => checkbox.value);
-
-//     const searchText = searchForm.value.toLowerCase();
-
-//     const filteredEvents = data.events.filter(event => {
-//         const isCategoryMatch = selectedCategories.length === 0 || selectedCategories.includes(event.category);
-//         const isSearchMatch = event.name.toLowerCase().includes(searchText) || event.description.toLowerCase().includes(searchText) || event.price.toString().includes(searchText);
-//         return isCategoryMatch && isSearchMatch;
-//     });
-
-//     renderEvents(filteredEvents);
-// }
-
 // function renderEvents(events) {
 //     contenedor.innerHTML = '';
 //     if (events.length === 0) {
@@ -63,23 +22,19 @@
 //             contenedor.appendChild(tarjeta);
 //         });
 //     }
-// }
+// } 
 
-// searchForm.addEventListener('input', filterEvents);
+//home.js
 
-// createCategoryCheckboxes();
-// filterEvents();
+// import {  useData, createCategoryCheckboxes, renderEvents } from "./functions.js";
 
-// home.js
-// import { useData, createCategoryCheckboxes } from "./functions.js";
+// document.addEventListener('DOMContentLoaded', () => {
+//     renderEvents();
+// });
 
 // const contenedor = document.getElementById("contenedor");
 // const checkboxContainer = document.getElementById("inputs");
 // const searchForm = document.getElementById("inputSearch");
-
-
-// createCategoryCheckboxes(data);
-
 
 // function filterEvents(data) {
 //     const selectedCategories = Array.from(checkboxContainer.querySelectorAll('input[type="checkbox"]:checked'))
@@ -96,42 +51,19 @@
 //     renderEvents(filteredEvents);
 // }
 
-// function renderEvents(events) {
-//     contenedor.innerHTML = '';
-//     if (events.length === 0) {
-//         contenedor.innerHTML = `
-//         <div> <h3>No encontramos eventos que coincidan con tu búsqueda.</h3>
-//         </div>`;
-//     } else {
-//         events.forEach(event => {
-//             let tarjeta = document.createElement("div");
-//             tarjeta.className = "tarjeta";
-//             tarjeta.innerHTML = `
-//                 <img class="imgcard card-img-top" src="${event.image}">
-//                 <div class="card-body d-flex flex-column justify-content-between">
-//                     <h5 class="card-title">${event.name}</h5>
-//                     <p class=" card-text">${event.description}</p>
-//                     <div class="d-flex justify-content-between">
-//                         <p>${event.price} $</p>
-//                         <a href="./pages/details.html?id=${event._id}" class="btn btn-primary">Details</a>
-//                     </div>
-//                 </div>`;
-//             contenedor.appendChild(tarjeta);
-//         });
-//     }
-// }
-
+// // Escuchar cambios en el campo de búsqueda y filtrar
 // searchForm.addEventListener('input', () => {
 //     useData(filterEvents);
 // });
 
-
+// // Iniciar el codigo y asegurar que todos los componentes estén sincronizados
 // useData((data) => {
-//     createCategoryCheckboxes(data);
-//     filterEvents(data);
+//     createCategoryCheckboxes(data, checkboxContainer, filterEvents); renderEvents(events);
+//     filterEvents(data); 
 // });
 
-import { useData, createCategoryCheckboxes } from "./functions.js";
+
+import { useData, createCategoryCheckboxes, renderEvents } from "./functions.js";
 
 const contenedor = document.getElementById("contenedor");
 const checkboxContainer = document.getElementById("inputs");
@@ -149,41 +81,17 @@ function filterEvents(data) {
         return isCategoryMatch && isSearchMatch;
     });
 
-    renderEvents(filteredEvents);
+    renderEvents(filteredEvents, contenedor);
 }
 
-function renderEvents(events) {
-    contenedor.innerHTML = '';
-    if (events.length === 0) {
-        contenedor.innerHTML = `
-        <div> <h3>No encontramos eventos que coincidan con tu búsqueda.</h3>
-        </div>`;
-    } else {
-        events.forEach(event => {
-            let tarjeta = document.createElement("div");
-            tarjeta.className = "tarjeta";
-            tarjeta.innerHTML = `
-                <img class="imgcard card-img-top" src="${event.image}">
-                <div class="card-body d-flex flex-column justify-content-between">
-                    <h5 class="card-title">${event.name}</h5>
-                    <p class=" card-text">${event.description}</p>
-                    <div class="d-flex justify-content-between">
-                        <p>${event.price} $</p>
-                        <a href="./pages/details.html?id=${event._id}" class="btn btn-primary">Details</a>
-                    </div>
-                </div>`;
-            contenedor.appendChild(tarjeta);
-        });
-    }
-}
-
-// Escuchar cambios en el campo de búsqueda y filtrar
-searchForm.addEventListener('input', () => {
-    useData(filterEvents);
+document.addEventListener('DOMContentLoaded', () => {
+    useData((data) => {
+        createCategoryCheckboxes(data, checkboxContainer, filterEvents);
+        renderEvents(data.events, contenedor);
+        filterEvents(data);
+    });
 });
 
-// Inicializar la aplicación y asegurar que todos los componentes estén sincronizados
-useData((data) => {
-    createCategoryCheckboxes(data, checkboxContainer, filterEvents); // Pasar filterEvents aquí
-    filterEvents(data); // Llamar a filterEvents con los datos iniciales
+searchForm.addEventListener('input', () => {
+    useData(filterEvents);
 });
