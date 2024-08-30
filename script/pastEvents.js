@@ -1,5 +1,3 @@
-// pastEvents.js
-
 import { useData, createCategoryCheckboxes, filterEvents } from "../modules/functions.js";
 
 const contenedor = document.getElementById("contenedor");

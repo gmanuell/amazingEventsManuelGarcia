@@ -1,5 +1,3 @@
-//home.js
-
 import { useData, createCategoryCheckboxes, renderEvents, filterEvents } from "../modules/functions.js";
 
 const contenedor = document.getElementById("contenedor");
