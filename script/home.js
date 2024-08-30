@@ -1,25 +1,6 @@
 //home.js
 
-// import { useData, createCategoryCheckboxes, renderEvents, filterEvents } from "./functions.js";
-
-// const contenedor = document.getElementById("contenedor");
-// const checkboxContainer = document.getElementById("inputs");
-// const searchForm = document.getElementById("inputSearch");
-
-
-// document.addEventListener('DOMContentLoaded', () => {
-//     useData((data) => {
-//         createCategoryCheckboxes(data, checkboxContainer, filterEvents);
-//         renderEvents(data.events, contenedor);
-//         filterEvents(data);
-//     });
-// });
-
-// searchForm.addEventListener('input', () => {
-//     useData(filterEvents);
-// });
-
-import { useData, createCategoryCheckboxes, renderEvents, filterEvents } from "./functions.js";
+import { useData, createCategoryCheckboxes, renderEvents, filterEvents } from "../modules/functions.js";
 
 const contenedor = document.getElementById("contenedor");
 const checkboxContainer = document.getElementById("inputs");

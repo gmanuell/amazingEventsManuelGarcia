@@ -1,5 +1,3 @@
-// // functions.js
-
 export function fetchData() {
     return fetch("https://aulamindhub.github.io/amazing-api/events.json")
         .then(response => {
@@ -61,7 +59,7 @@ export function renderEvents(events, contenedor) {
                     <p class="card-text">${event.description}</p>
                     <div class="d-flex justify-content-between">
                         <p>${event.price} $</p>
-                        <a href="./pages/details.html?id=${event._id}" class="btn btn-primary">Details</a>
+                        <a href="../pages/Details.html?id=${event._id}" class="btn btn-primary">Details</a>
                     </div>
                 </div>`;
             contenedor.appendChild(tarjeta);

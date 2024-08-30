@@ -1,6 +1,6 @@
 // pastEvents.js
 
-import { useData, createCategoryCheckboxes, filterEvents } from "./functions.js";
+import { useData, createCategoryCheckboxes, filterEvents } from "../modules/functions.js";
 
 const contenedor = document.getElementById("contenedor");
 const checkboxContainer = document.getElementById("inputs");
