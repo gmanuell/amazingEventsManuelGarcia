@@ -46,7 +46,7 @@ export function renderEvents(events, contenedor) {
     contenedor.innerHTML = '';
     if (events.length === 0) {
         contenedor.innerHTML = `
-        <div> <h3>No encontramos eventos que coincidan con tu búsqueda.</h3>
+        <div> <h3>We did not find events that match your search.</h3>
         </div>`;
     } else {
         events.forEach(event => {

@@ -4,8 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
     fetchData()
         .then(data => {
             
-            console.log(data);
-            
             const currentDate = new Date(data.currentDate);
             data.pastEvents = data.events.filter(event => new Date(event.date) < currentDate);
             data.upcomingEvents = data.events.filter(event => new Date(event.date) > currentDate);
@@ -19,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
             mostrarEstadisticas(data);
         })
         .catch(error => {
-            console.error("Error al obtener los datos:", error);
+            console.error("Error getting data:", error);
         });
 });
 
