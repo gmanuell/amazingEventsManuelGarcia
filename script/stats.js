@@ -81,7 +81,7 @@ function agruparPorCategoria(events) {
 function mostrarEstadisticas(data) {
     const cardContainer = document.getElementById("tableStats");
     const cardContent = document.createElement("div");
-    cardContent.className = "d-flex align-items-center";
+    cardContent.className = "d-flex align-items-center justify-content-center";
 
     const upcomingEvents = Array.isArray(data.upcomingEvents) ? agruparPorCategoria(data.upcomingEvents) : [];
     const pastEvents = Array.isArray(data.pastEvents) ? agruparPorCategoria(data.pastEvents) : [];
